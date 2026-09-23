@@ -5,7 +5,7 @@
    ========================================================================= */
 const DATA = {
   // --- Niveles de desempeño (de mayor a menor) y puntos en escala 1.0 - 5.0
-  niveles: [{ n: 'Superior', p: 5 }, { n: 'Alto', p: 4 }, { n: 'Básico', p: 3 }, { n: 'Bajo', p: 2 }, { n: 'Muy bajo', p: 1 }],
+  niveles: [{ n: '5', p: 5 }, { n: '4', p: 4 }, { n: '3', p: 3 }, { n: '2', p: 2 }, { n: '1', p: 1 }],
 
   // --- Rúbrica: [criterio, [5 descriptores ordenados de MENOR a MAYOR desempeño]]
   rubrica: [
