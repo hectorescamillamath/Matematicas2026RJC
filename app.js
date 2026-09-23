@@ -185,7 +185,7 @@ function initRecursos() {
   });
 
   const play = i => {
-    $('#player').src = `https://www.youtube-nocookie.com/embed/${DATA.videos[i].yt}?rel=0`;
+    $('#player').src = `https://www.youtube.com/embed/${DATA.videos[i].yt}?rel=0`;
     $$('#playlist button').forEach((b, k) => b.classList.toggle('bg-mark', k === i));
   };
   $('#playlist').innerHTML = DATA.videos.map((v, i) => `<li><button class="w-full text-left p-2 rounded font-bold" data-v="${i}">${esc(v.titulo)}</button></li>`).join('');
