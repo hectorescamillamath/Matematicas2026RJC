@@ -122,13 +122,13 @@ function controls(html) { $('#chat-controls').innerHTML = html; const f = $('#ch
 function chatStart() {
   chat.started = true; chat.ans = {}; $('#chat-log').innerHTML = '';
   if (!session) { say('bot', 'Para autoevaluarte primero debes ingresar con tu curso y documento.'); controls('<button class="btn btn-primary" onclick="showTab(\'inicio\')">Ir a Inicio</button>'); chat.started = false; return; }
-  say('bot', `¡Hola, <strong>${esc(session.nombre.split(' ')[0])}</strong>! Vamos a autoevaluar tu desempeño en ${DATA.rubrica.length} criterios. En cada uno elige la frase que mejor describe cómo has trabajado. Sé honesto: es para ayudarte a mejorar.`);
+  say('bot', `¡Hola, <strong>${esc(session.nombre.split(' ')[0])}</strong>! La autoevaluación dse desarrolla de acuerdo a ${DATA.rubrica.length} criterios. En cada uno elija la frase que mejor describa cómo ha sido su proceso durante este corte académico. Sea honesto/a en sus respuestas: la autoevaluación debe entenderse como un proceso de reflexión sobre el avance propio, más que como un trámite numérico. El promedio de las autoevaluaciones realizadas corresponderá a la nota de coevaluación del curso.`);
   chatAsk(0);
 }
 function chatAsk(i) {
   const r = DATA.rubrica[i];
   if (!r) return chatReflect();
-  say('bot', `<strong>Criterio ${i + 1} de ${DATA.rubrica.length}: ${esc(r[0])}</strong><br>¿Cuál frase te describe mejor?`);
+  say('bot', `<strong>Criterio ${i + 1} de ${DATA.rubrica.length}: ${esc(r[0])}</strong><br>¿Cuál de las siguientes frases le describe mejor?`);
   // los descriptores se guardan de menor a mayor; se muestran de Superior a Muy bajo
   controls(DATA.niveles.map((n, k) => `<button class="btn w-full text-left" data-lvl="${k}" data-i="${i}"><strong>${n.n}.</strong> ${esc(r[1][DATA.niveles.length - 1 - k])}</button>`).join(''));
 }
@@ -138,21 +138,21 @@ function chatSuggest() {
 }
 function chatReflect() {
   const rub = DATA.rubrica, weak = rub.filter((r, i) => chat.ans[i] >= 3).map(r => esc(r[0]));
-  say('bot', `Este es tu resumen:<br>${rub.map((r, i) => `${esc(r[0])}: <strong>${DATA.niveles[chat.ans[i]].n}</strong>`).join('<br>')}<br><br>Tu nota sugerida es <strong>${chatSuggest().toFixed(1)}</strong> (es una guía, no la nota final).${weak.length ? `<br>Por fortalecer: <strong>${weak.join(', ')}</strong>.` : ''}<br><br>Escribe tu reflexión: ¿qué fortaleza destacas y qué vas a mejorar?`);
-  controls('<textarea id="refl" rows="3" maxlength="1000" class="w-full border-2 border-ink rounded-lg p-2" aria-label="Tu reflexión"></textarea><button class="btn btn-primary" data-send>Enviar autoevaluación</button><button class="btn" data-restart>Empezar de nuevo</button>');
+  say('bot', `Este es tu resumen:<br>${rub.map((r, i) => `${esc(r[0])}: <strong>${DATA.niveles[chat.ans[i]].n}</strong>`).join('<br>')}<br><br>Tu nota sugerida es <strong>${chatSuggest().toFixed(1)}</strong> (esta nota es un estimado, no la nota final; se susceptible de ser corregida, contrastando las respuestas dadas con el desempeño efectivo).${weak.length ? `<br>Por fortalecer: <strong>${weak.join(', ')}</strong>.` : ''}<br><br>Escriba su reflexión: ¿qué fortaleza destaca y qué debería mejorar?`);
+  controls('<textarea id="refl" rows="3" maxlength="1000" class="w-full border-2 border-ink rounded-lg p-2" aria-label="Reflexión"></textarea><button class="btn btn-primary" data-send>Enviar autoevaluación</button><button class="btn" data-restart>Empezar de nuevo</button>');
 }
 async function chatSend() {
   const txt = $('#refl').value.trim();
-  if (txt.length < 10) { $('#refl').placeholder = 'Escribe al menos una frase (10 caracteres).'; return; }
+  if (txt.length < 10) { $('#refl').placeholder = 'Escriba al menos una frase (10 caracteres).'; return; }
   say('user', esc(txt)); controls('<span>Enviando…</span>');
   const detalle = Object.fromEntries(DATA.rubrica.map((r, i) => [r[0], DATA.niveles[chat.ans[i]].n]));
   try {
     const d = await apiPost({ action: 'autoevaluacion', curso: session.curso, documento: session.documento, detalle, notaSugerida: chatSuggest(), reflexion: txt });
     if (!d.ok) throw new Error(d.error);
-    say('bot', '¡Listo! Tu autoevaluación quedó registrada. Gracias por reflexionar.');
+    say('bot', '¡Listo! Su autoevaluación quedó registrada. Gracias por reflexionar.');
     controls('<button class="btn" data-restart>Hacer otra autoevaluación</button>');
   } catch (ex) {
-    say('bot', 'No pudimos enviar tus respuestas: ' + esc(ex.message) + '. Inténtalo de nuevo.');
+    say('bot', 'No pudimos enviar sus respuestas: ' + esc(ex.message) + '. Inténtelo de nuevo.');
     controls('<button class="btn btn-primary" data-retry>Reintentar</button>'); chat.retry = txt;
   }
 }
