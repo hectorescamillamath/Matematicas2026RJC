@@ -3,7 +3,7 @@
    CONFIGURACIÓN Y CONTENIDO EDITABLE (modifica solo esta sección)
    ========================================================================= */
 const CONFIG = {
-  API_URL: 'PEGA_AQUI_LA_URL_DEL_WEB_APP', // termina en /exec
+  API_URL: 'https://script.google.com/macros/s/AKfycby7RqbEcEdJTnDeaaOCa_dE0TEUB8OO-LmN_DvGSzUJO5nrDidESU8CesifC-NSE8L1pw/exec', // termina en /exec
   NOTA_MINIMA: 3.0,
   SEGUNDOS_RETO: 15
 };
