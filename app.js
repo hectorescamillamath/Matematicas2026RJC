@@ -103,7 +103,7 @@ function renderSession() {
     <div class="overflow-x-auto mt-4"><table class="w-full text-left"><thead><tr class="border-b-2 border-ink"><th class="py-2">Actividad</th><th>Calificación</th></tr></thead><tbody>
     ${session.notas.map(n => `<tr class="border-b"><td class="py-2">${esc(n.actividad)}</td><td class="font-bold">${n.valor === '' ? '<span class="font-normal text-gray-600">Sin publicar</span>' : esc(n.valor)}</td></tr>`).join('') || '<tr><td colspan="2" class="py-3">Aún no hay actividades registradas.</td></tr>'}
     </tbody></table></div>
-    <p class="mt-4 text-sm">Las calificaciones son ponderadas: el porcentaje de cada actividad aparece en su nombre. La definitiva la publica tu docente.</p>
+    <p class="mt-4 text-sm">Las calificaciones son ponderadas tal como se señala en el documento de acuerdos de clase. La nota definitiva se publicará al final del periodo académico.</p>
     ${session.observaciones ? `<p class="mt-2"><strong>Observaciones:</strong> ${esc(session.observaciones)}</p>` : ''}
     <button id="refresh-notas" class="btn mt-4" onclick="refreshNotas()">Actualizar notas</button></div>`;
 }
