@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula Virtual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      fontFamily: { display: ['"Bricolage Grotesque"', 'sans-serif'], sans: ['"Atkinson Hyperlegible"', 'system-ui', 'sans-serif'] },
+      colors: { ink: '#14213D', brand: '#2B59C3', mark: '#FFE45E', paper: '#F3F6F8' }
+    } } };
+  </script>
+  <style>
+    /* Fondo de cuaderno cuadriculado */
+    body { background-color: #F3F6F8; background-image: linear-gradient(#dbe4ee 1px, transparent 1px), linear-gradient(90deg, #dbe4ee 1px, transparent 1px); background-size: 28px 28px; }
+    .card { background: #fff; border: 2px solid #14213D; border-radius: 14px; box-shadow: 4px 4px 0 #14213D; }
+    .btn { border: 2px solid #14213D; border-radius: 10px; padding: .5rem 1rem; font-weight: 700; background: #fff; }
+    .btn:hover { background: #FFE45E; }
+    .btn-primary { background: #2B59C3; color: #fff; } .btn-primary:hover { background: #14213D; color: #fff; }
+    :focus-visible { outline: 3px solid #2B59C3; outline-offset: 2px; }
+    .tab[aria-selected="true"] { background: #FFE45E; box-shadow: inset 0 -4px 0 #14213D; }
+    .flip { perspective: 900px; } .flip-in { transition: transform .5s; transform-style: preserve-3d; position: relative; }
+    .flip.on .flip-in { transform: rotateY(180deg); }
+    .face { backface-visibility: hidden; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem; text-align: center; }
+    .back { transform: rotateY(180deg); }
+    @media (prefers-reduced-motion: reduce) { .flip-in { transition: none; } }
+  </style>
+</head>
+<body class="font-sans text-ink min-h-screen">
+  <a href="#main" class="sr-only focus:not-sr-only p-2 bg-white">Saltar al contenido</a>
+
+  <header class="bg-ink text-white">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+      <h1 class="font-display text-2xl font-extrabold">Aula <span class="bg-mark text-ink px-1 rounded">Virtual</span></h1>
+      <div id="session-chip" class="hidden text-sm flex items-center gap-2">
+        <span id="session-name"></span>
+        <button id="logout" class="underline">Cerrar sesión</button>
+      </div>
+    </div>
+    <nav class="max-w-5xl mx-auto px-2 flex overflow-x-auto" role="tablist" aria-label="Secciones">
+      <button class="tab px-4 py-3 text-ink bg-white/90 font-bold whitespace-nowrap" role="tab" data-tab="inicio" aria-selected="true">Inicio</button>
+      <button class="tab px-4 py-3 text-ink bg-white/90 font-bold whitespace-nowrap" role="tab" data-tab="notas" aria-selected="false">Notas</button>
+      <button class="tab px-4 py-3 text-ink bg-white/90 font-bold whitespace-nowrap" role="tab" data-tab="practica" aria-selected="false">Práctica</button>
+      <button class="tab px-4 py-3 text-ink bg-white/90 font-bold whitespace-nowrap" role="tab" data-tab="autoeval" aria-selected="false">Autoevaluación</button>
+      <button class="tab px-4 py-3 text-ink bg-white/90 font-bold whitespace-nowrap" role="tab" data-tab="recursos" aria-selected="false">Recursos</button>
+    </nav>
+  </header>
+
+  <main id="main" class="max-w-5xl mx-auto px-4 py-6">
+
+    <!-- INICIO / LOGIN -->
+    <section id="tab-inicio" role="tabpanel">
+      <div id="login-box" class="card p-6 max-w-md">
+        <h2 class="font-display text-2xl font-extrabold mb-1">Ingresa a tus notas</h2>
+        <p class="mb-4 text-sm">Elige tu curso y escribe tu documento de identidad.</p>
+        <form id="login-form" class="space-y-3">
+          <label class="block font-bold" for="curso">Curso</label>
+          <input id="curso" list="cursos-list" required autocomplete="off" class="w-full border-2 border-ink rounded-lg p-2" placeholder="Ej. 901">
+          <datalist id="cursos-list"></datalist>
+          <label class="block font-bold" for="documento">Documento de identidad</label>
+          <input id="documento" required inputmode="numeric" autocomplete="off" class="w-full border-2 border-ink rounded-lg p-2">
+          <button class="btn btn-primary w-full" id="login-btn">Consultar</button>
+          <p id="login-error" role="alert" class="text-red-700 font-bold"></p>
+        </form>
+      </div>
+      <div id="dashboard" class="hidden"></div>
+    </section>
+
+    <!-- NOTAS -->
+    <section id="tab-notas" role="tabpanel" hidden><div id="notas-out"></div></section>
+
+    <!-- PRÁCTICA -->
+    <section id="tab-practica" role="tabpanel" hidden>
+      <h2 class="font-display text-2xl font-extrabold mb-3">Elige un modo de práctica</h2>
+      <div id="math-menu" class="grid sm:grid-cols-2 md:grid-cols-4 gap-4"></div>
+      <div id="math-game" class="hidden card p-6"></div>
+    </section>
+
+    <!-- AUTOEVALUACIÓN -->
+    <section id="tab-autoeval" role="tabpanel" hidden>
+      <div class="card p-4">
+        <div id="chat-log" class="h-96 overflow-y-auto space-y-3 p-2" aria-live="polite"></div>
+        <div id="chat-controls" class="border-t-2 border-ink pt-3 flex flex-wrap gap-2"></div>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section id="tab-recursos" role="tabpanel" hidden class="space-y-10">
+      <div><h2 class="font-display text-2xl font-extrabold mb-3">Actividades y guías</h2><div id="unidades" class="space-y-6"></div></div>
+      <div><h2 class="font-display text-2xl font-extrabold mb-3">Videos</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="md:col-span-2 card overflow-hidden"><div class="aspect-video"><iframe id="player" class="w-full h-full" title="Reproductor de video" allowfullscreen loading="lazy"></iframe></div></div>
+          <ul id="playlist" class="card p-2 space-y-1 max-h-72 overflow-y-auto"></ul>
+        </div></div>
+      <div><h2 class="font-display text-2xl font-extrabold mb-3">Libro de texto</h2>
+        <div class="card overflow-hidden"><iframe id="book" class="w-full h-[70vh]" title="Libro de texto" loading="lazy"></iframe></div>
+        <a id="book-dl" class="btn inline-block mt-3" target="_blank" rel="noopener">Descargar libro</a></div>
+    </section>
+  </main>
+
+  <dialog id="viewer" class="card w-[95vw] max-w-4xl p-0">
+    <div class="flex justify-between items-center p-3 border-b-2 border-ink"><strong id="viewer-title"></strong><button class="btn" id="viewer-close">Cerrar</button></div>
+    <iframe id="viewer-frame" class="w-full h-[75vh]" title="Documento"></iframe>
+  </dialog>
+
+  <script src="matematicas.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
