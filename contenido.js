@@ -111,7 +111,7 @@ const DATA = {
     { titulo: 'Video 1 – Operaciones, potencias y raíces', yt: 'ID_YOUTUBE_1' },
     { titulo: 'Video 2 – Ecuaciones de primer grado', yt: 'ID_YOUTUBE_2' },
     { titulo: 'Video 3 – Ecuaciones de segundo grado', yt: 'ID_YOUTUBE_3' },
-    { titulo: 'Video 4 – Teorema de Pitágoras', yt: 'ID_YOUTUBE_4' },
+    { titulo: 'Video 4 – Teorema de Pitágoras', yt: 'y6H8TY2VbvM' },
     { titulo: 'Video 5 – Razones trigonométricas', yt: 'ID_YOUTUBE_5' },
     { titulo: 'Video 6 – Leyes de seno y coseno', yt: 'ID_YOUTUBE_6' },
     { titulo: 'Video 7 – Ecuaciones trigonométricas', yt: 'ID_YOUTUBE_7' }
