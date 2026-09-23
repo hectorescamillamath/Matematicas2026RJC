@@ -86,24 +86,19 @@ const DATA = {
   // --- Guías y talleres: [tipo, título, ID del PDF en Drive, modo de práctica opcional]
   // Modos: arit, lin, quad, pit, raz, gen, teq
   unidades: [
-    { unidad: 'Unidad 1: Aritmética y álgebra', items: [
-      ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'ID_DRIVE_GUIA_1'],
-      ['Taller', 'Taller 1 – Aritmética', 'ID_DRIVE_TALLER_1', 'arit'],
-      ['Guía', 'Guía 2 – Ecuaciones de primer grado', 'ID_DRIVE_GUIA_2'],
-      ['Taller', 'Taller 2 – Despeja la incógnita', 'ID_DRIVE_TALLER_2', 'lin'],
-      ['Guía', 'Guía 3 – Ecuaciones de segundo grado', 'ID_DRIVE_GUIA_3'],
-      ['Taller', 'Taller 3 – Factorización y fórmula general', 'ID_DRIVE_TALLER_3', 'quad']] },
-    { unidad: 'Unidad 2: Triángulos rectángulos', items: [
-      ['Guía', 'Guía 4 – Teorema de Pitágoras', 'ID_DRIVE_GUIA_4'],
-      ['Taller', 'Taller 4 – Lados desconocidos', 'ID_DRIVE_TALLER_4', 'pit'],
-      ['Guía', 'Guía 5 – Razones trigonométricas', 'ID_DRIVE_GUIA_5'],
-      ['Taller', 'Taller 5 – Seno, coseno y tangente', 'ID_DRIVE_TALLER_5', 'raz']] },
-    { unidad: 'Unidad 3: Triángulos oblicuos', items: [
-      ['Guía', 'Guía 6 – Leyes de seno y coseno', 'ID_DRIVE_GUIA_6'],
-      ['Taller', 'Taller 6 – Resolución de triángulos', 'ID_DRIVE_TALLER_6', 'gen']] },
-    { unidad: 'Unidad 4: Ecuaciones trigonométricas', items: [
-      ['Guía', 'Guía 7 – Ángulo de referencia y cuadrantes', 'ID_DRIVE_GUIA_7'],
-      ['Taller', 'Taller 7 – Ecuaciones con seno, coseno y tangente', 'ID_DRIVE_TALLER_7', 'teq']] }
+    { unidad: 'Tercer Periodo', items: [
+      ['Guía', 'Tarea 1 – Acuerdos de Clase Tercer Periodo', 'ID_DRIVE_GUIA_1'],
+      ['Taller', 'Taller 1 – Trazado de Gráficas Trigonométricas', 'ID_DRIVE_TALLER_1', 'arit'],
+      ['Taller', 'Taller 2 – Aplicaciones de las funciones Trigonométricas - M.A.S.', 'ID_DRIVE_TALLER_2', 'lin'],
+      ['Taller', 'Taller 3 – Ecuaciones trigonométricas', 'ID_DRIVE_TALLER_3', 'quad']] },
+    { unidad: 'Segundo Periodo', items: [
+      ['Guía', 'Guía 1 – Acuerdos de Clase Segundo Periodo', 'ID_DRIVE_GUIA_4'],
+      ['Taller', 'Taller 1 – Lados desconocidos', 'ID_DRIVE_TALLER_4', 'pit'],
+      ['Taller', 'Taller 2 – Seno, coseno y tangente', 'ID_DRIVE_TALLER_5', 'raz']] },
+    { unidad: 'Primer Periodo', items: [
+      ['Guía', 'Guía 1 – Acuerdos de Clase Primer Periodo', 'ID_DRIVE_GUIA_6'],
+      ['Taller', 'Taller 1 – Resolución de triángulos', 'ID_DRIVE_TALLER_6', 'gen']] },
+      ['Taller', 'Taller 2 – Ecuaciones con seno, coseno y tangente', 'ID_DRIVE_TALLER_7', 'teq']] }
   ].map(u => ({ unidad: u.unidad, items: u.items.map(([tipo, titulo, drive, modo]) => ({ tipo, titulo, drive, modo })) })),
 
   // --- Videos (ID = lo que va después de v= en YouTube)
