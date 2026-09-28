@@ -87,7 +87,7 @@ const DATA = {
   // Modos: arit, lin, quad, pit, raz, gen, teq
   unidades: [
     { Temáticas: 'Primer periodo: Fundamentos (Aritmética, álgebra, geometría)', items: [
-      ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'd/1eKIxmnEslyzsTDlcyIPRZlhFxow4WvVB/view?usp=drive_link'],
+      ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'ID_DRIVE_GUIA_2'],
       ['Taller', 'Taller 1 – Aritmética', 'ID_DRIVE_TALLER_1', 'arit'],
       ['Guía', 'Guía 2 – Ecuaciones de primer grado', 'ID_DRIVE_GUIA_2'],
       ['Taller', 'Taller 2 – Despeja la incógnita', 'ID_DRIVE_TALLER_2', 'lin'],
