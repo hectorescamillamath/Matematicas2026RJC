@@ -108,7 +108,14 @@ const DATA = {
 
   // --- Videos (ID = lo que va después de v= en YouTube)
   videos: [
-    { titulo: '¿Cómo calcular el área de un triángulo?', yt: 'thNzYoGTyNw' },
+    { titulo: 'Teorema de Pitágoras', yt: 'Zl08roWOyIo' },
+    { titulo: 'Solución de Triángulos usando Teorema de Pitágoras', yt: 'LDDzSm9rpV0' },
+    { titulo: 'Razones Trigonométricas', yt: 'QiLtdiCRHHc' },
+    { titulo: 'Razones Trigonométricas de Ángulos Notables', yt: 'BrPx7drVTYY },
+    { titulo: 'Solución de triángulos rectángulos con Ángulos Notables', yt: 'auKgPc5UHdw' },
+    { titulo: 'Solución de triángulos rectángulos usando calculadora', yt: '9PaRHH7GpkY' },
+    { titulo: 'Funciones Trigonométricas inversas', yt: 'GSEcaCt7Z_U' },
+    { titulo: '¿Cómo calcular el área de un triángulo sin conocer su altura?', yt: 'thNzYoGTyNw' },
     { titulo: '¿De dónde viene el Teorema de Seno?', yt: 'ued7qilN76k' },
     { titulo: 'Teorema de Seno: ejemplo 1', yt: 'z0BEiLcRh6s' },
     { titulo: 'Teorema de Seno: ejemplo 2', yt: 'NtUWh2RQYCs' },
