@@ -83,11 +83,11 @@ const DATA = {
       'Siempre mantengo una actitud muy positiva y me siento altamente motivado.']]
   ],
 
-  // --- Guías y talleres: [tipo, título, ID del PDF en Drive, modo de práctica opcional]
+  // --- Recursos de Trabajo: [tipo, título, ID del PDF en Drive, modo de práctica opcional]
   // Modos: arit, lin, quad, pit, raz, gen, teq
   unidades: [
-    { unidad: 'Unidad 1: Aritmética y álgebra', items: [
-      ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'ID_DRIVE_GUIA_1'],
+    { Temáticas: 'Primer periodo: Fundamentos (Aritmética, álgebra, geometría)', items: [
+      ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'd/1eKIxmnEslyzsTDlcyIPRZlhFxow4WvVB/view?usp=drive_link'],
       ['Taller', 'Taller 1 – Aritmética', 'ID_DRIVE_TALLER_1', 'arit'],
       ['Guía', 'Guía 2 – Ecuaciones de primer grado', 'ID_DRIVE_GUIA_2'],
       ['Taller', 'Taller 2 – Despeja la incógnita', 'ID_DRIVE_TALLER_2', 'lin'],
@@ -163,8 +163,7 @@ const DATA = {
       ['Identidad fundamental', 'sen²x + cos²x = 1'],
       ['Identidades con tangente', 'tan x = sen x / cos x · 1 + tan²x = sec²x'],
       ['Radianes', '180° = π rad. Grados → radianes: × π/180. Radianes → grados: × 180/π'],
-      ['Signos por cuadrante', 'I: todas positivas · II: solo sen · III: solo tan · IV: solo cos'],
-      ['Ángulo de referencia (θ)', 'Ángulo agudo con el eje x. Cuadrante II: 180° − θ · III: 180° + θ · IV: 360° − θ'],
+      ['Signos de las funciones trigonométricas por cuadrante', 'I: todas positivas · II: solo sin · III: solo tan · IV: solo cos'],
       ['Periodo', 'sen y cos: 2π (360°). tan: π (180°)'],
       ['Estrategia', 'Despeja la razón, halla el ángulo de referencia θ y ubica las soluciones según el signo'],
       ['sen x = k  (k > 0)', 'x = θ y x = 180° − θ  (cuadrantes I y II)'],
