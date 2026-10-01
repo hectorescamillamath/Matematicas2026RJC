@@ -13,7 +13,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const shuffle = a => [...a].sort(() => Math.random() - .5);
-const drivePreview = id => `https://drive.google.com/file/d/${id}/preview`;
+const drivePreview = id => `https://drive.google.com/file/d/${id}/view`;
 const driveDownload = id => `https://drive.google.com/uc?export=download&id=${id}`;
 
 const Session = {
