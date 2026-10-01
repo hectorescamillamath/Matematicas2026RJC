@@ -111,7 +111,7 @@ const DATA = {
       ['Ecuación de primer grado', 'Haz la misma operación en ambos lados hasta despejar. ax + b = c ⇒ x = (c − b)/a'],
       ['Ecuación de segundo grado', 'ax² + bx + c = 0, con a ≠ 0'],
       ['Fórmula general', 'x = (−b ± √(b² − 4ac)) / 2a'],
-      ['Discriminante', 'Δ = b² − 4ac. Δ > 0: dos soluciones reales. Δ = 0: una. Δ < 0: ninguna real'],
+      ['Discriminante', 'D = b² − 4ac. D > 0: dos soluciones reales. D = 0: una. D < 0: ninguna real'],
       ['Factorización', 'x² + bx + c = (x + p)(x + q), con p + q = b y p · q = c']
     ],
     'Triángulo rectángulo': [
@@ -122,7 +122,7 @@ const DATA = {
       ['Coseno', 'cos A = cateto adyacente / hipotenusa'],
       ['Tangente', 'tan A = cateto opuesto / cateto adyacente = sen A / cos A'],
       ['Razones inversas', 'csc A = 1/sen A · sec A = 1/cos A · cot A = 1/tan A'],
-      ['Hallar un ángulo', 'A = sen⁻¹(op/hip) = cos⁻¹(ady/hip) = tan⁻¹(op/ady)'],
+      ['Hallar un ángulo', 'A = sen⁻¹(CO/H) = cos⁻¹(CA/H) = tan⁻¹(CO/CA)'],
       ['Elevación y depresión', 'Se miden desde la horizontal: hacia arriba (elevación) o hacia abajo (depresión)'],
       ['Seno y coseno notables', 'sen 30° = 1/2 · sen 45° = √2/2 · sen 60° = √3/2. cos 30° = √3/2 · cos 45° = √2/2 · cos 60° = 1/2'],
       ['Tangente notable', 'tan 30° = √3/3 · tan 45° = 1 · tan 60° = √3']
