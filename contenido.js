@@ -129,11 +129,11 @@ const DATA = {
     ],
     'Triángulos oblicuos': [
       ['Suma de ángulos', 'A + B + C = 180°'],
-      ['Ley de senos', 'a/sen A = b/sen B = c/sen C'],
-      ['¿Cuándo usar senos?', 'Cuando conoces un lado y su ángulo opuesto (casos ALA, AAL y LLA)'],
-      ['Ley de cosenos', 'a² = b² + c² − 2bc·cos A'],
+      ['Teorema de seno', 'a/sen A = b/sen B = c/sen C'],
+      ['¿Cuándo usar el Teorema de seno?', 'Cuando conoces un lado y su ángulo opuesto (casos ALA, AAL y LLA)'],
+      ['Teorema de coseno', 'a² = b² + c² − 2bc·cos A'],
       ['Ángulo con cosenos', 'cos A = (b² + c² − a²) / (2bc)'],
-      ['¿Cuándo usar cosenos?', 'Con dos lados y el ángulo entre ellos (LAL) o con los tres lados (LLL)'],
+      ['¿Cuándo usar el Teorema de Coseno?', 'Con dos lados y el ángulo entre ellos (LAL) o con los tres lados (LLL)'],
       ['Caso ambiguo (LLA)', 'Con dos lados y un ángulo no comprendido puede haber 0, 1 o 2 triángulos']
     ],
     'Ecuaciones trigonométricas': [
