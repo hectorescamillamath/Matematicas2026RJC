@@ -106,17 +106,24 @@ const DATA = {
       ['Taller', 'Taller 7 – Ecuaciones con seno, coseno y tangente', 'ID_DRIVE_TALLER_7', 'teq']] }
   ].map(u => ({ unidad: u.unidad, items: u.items.map(([tipo, titulo, drive, modo]) => ({ tipo, titulo, drive, modo })) })),
 
-  // --- Videos (ID = lo que va después de v= en YouTube)
+    // --- Videos (ID = lo que va después de v= en YouTube)
   videos: [
-    { titulo: 'Video 1 – Operaciones, potencias y raíces', yt: 'ID_YOUTUBE_1' },
-    { titulo: 'Video 2 – Ecuaciones de primer grado', yt: 'ID_YOUTUBE_2' },
-    { titulo: 'Video 3 – Ecuaciones de segundo grado', yt: 'ID_YOUTUBE_3' },
-    { titulo: 'Video 4 – Teorema de Pitágoras', yt: 'ID_YOUTUBE_4' },
-    { titulo: 'Video 5 – Razones trigonométricas', yt: 'ID_YOUTUBE_5' },
-    { titulo: 'Video 6 – Leyes de seno y coseno', yt: 'ID_YOUTUBE_6' },
-    { titulo: 'Video 7 – Ecuaciones trigonométricas', yt: 'ID_YOUTUBE_7' }
+    { titulo: 'Teorema de Pitágoras', yt: 'Zl08roWOyIo' },
+    { titulo: 'Solución de Triángulos usando Teorema de Pitágoras', yt: 'LDDzSm9rpV0' },
+    { titulo: 'Razones Trigonométricas', yt: 'QiLtdiCRHHc' },
+    { titulo: 'Razones Trigonométricas de Ángulos Notables', yt: 'BrPx7drVTYY' },
+    { titulo: 'Solución de triángulos rectángulos con Ángulos Notables', yt: 'auKgPc5UHdw' },
+    { titulo: 'Solución de triángulos rectángulos usando calculadora', yt: '9PaRHH7GpkY' },
+    { titulo: 'Funciones Trigonométricas inversas', yt: 'GSEcaCt7Z_U' },
+    { titulo: '¿Cómo calcular el área de un triángulo sin conocer su altura?', yt: 'thNzYoGTyNw' },
+    { titulo: '¿De dónde viene el Teorema de Seno?', yt: 'ued7qilN76k' },
+    { titulo: 'Teorema de Seno: ejemplo 1', yt: 'z0BEiLcRh6s' },
+    { titulo: 'Teorema de Seno: ejemplo 2', yt: 'NtUWh2RQYCs' },
+    { titulo: 'Teorema de Seno: ejemplo 3', yt: 't5Lx6rpiMD8' },
+    { titulo: '¿El Teorema de Seno funciona siempre?', yt: 'l42y8QoBg10' },
+    { titulo: '¿De dónde viene el Teorema de Coseno?', yt: 'rzJ8ro0ipg8' },
   ],
-  libro: 'ID_DRIVE_LIBRO',
+  libro: '18qJeVXECTi9NJO0Xao6EZQ6P6kk2MshT',
 
   // --- Tarjetas de estudio: tema → [anverso, reverso]
   tarjetas: {
@@ -127,7 +134,7 @@ const DATA = {
       ['Ecuación de primer grado', 'Haz la misma operación en ambos lados hasta despejar. ax + b = c ⇒ x = (c − b)/a'],
       ['Ecuación de segundo grado', 'ax² + bx + c = 0, con a ≠ 0'],
       ['Fórmula general', 'x = (−b ± √(b² − 4ac)) / 2a'],
-      ['Discriminante', 'Δ = b² − 4ac. Δ > 0: dos soluciones reales. Δ = 0: una. Δ < 0: ninguna real'],
+      ['Discriminante', 'D = b² − 4ac. D > 0: dos soluciones reales. D = 0: una. D < 0: ninguna real'],
       ['Factorización', 'x² + bx + c = (x + p)(x + q), con p + q = b y p · q = c']
     ],
     'Triángulo rectángulo': [
@@ -138,26 +145,25 @@ const DATA = {
       ['Coseno', 'cos A = cateto adyacente / hipotenusa'],
       ['Tangente', 'tan A = cateto opuesto / cateto adyacente = sen A / cos A'],
       ['Razones inversas', 'csc A = 1/sen A · sec A = 1/cos A · cot A = 1/tan A'],
-      ['Hallar un ángulo', 'A = sen⁻¹(op/hip) = cos⁻¹(ady/hip) = tan⁻¹(op/ady)'],
+      ['Hallar un ángulo', 'A = sen⁻¹(CO/H) = cos⁻¹(CA/H) = tan⁻¹(CO/CA)'],
       ['Elevación y depresión', 'Se miden desde la horizontal: hacia arriba (elevación) o hacia abajo (depresión)'],
       ['Seno y coseno notables', 'sen 30° = 1/2 · sen 45° = √2/2 · sen 60° = √3/2. cos 30° = √3/2 · cos 45° = √2/2 · cos 60° = 1/2'],
       ['Tangente notable', 'tan 30° = √3/3 · tan 45° = 1 · tan 60° = √3']
     ],
     'Triángulos oblicuos': [
       ['Suma de ángulos', 'A + B + C = 180°'],
-      ['Ley de senos', 'a/sen A = b/sen B = c/sen C'],
-      ['¿Cuándo usar senos?', 'Cuando conoces un lado y su ángulo opuesto (casos ALA, AAL y LLA)'],
-      ['Ley de cosenos', 'a² = b² + c² − 2bc·cos A'],
+      ['Teorema de seno', 'a/sen A = b/sen B = c/sen C'],
+      ['¿Cuándo usar el Teorema de seno?', 'Cuando conoces un lado y su ángulo opuesto (casos ALA, AAL y LLA)'],
+      ['Teorema de coseno', 'a² = b² + c² − 2bc·cos A'],
       ['Ángulo con cosenos', 'cos A = (b² + c² − a²) / (2bc)'],
-      ['¿Cuándo usar cosenos?', 'Con dos lados y el ángulo entre ellos (LAL) o con los tres lados (LLL)'],
+      ['¿Cuándo usar el Teorema de Coseno?', 'Con dos lados y el ángulo entre ellos (LAL) o con los tres lados (LLL)'],
       ['Caso ambiguo (LLA)', 'Con dos lados y un ángulo no comprendido puede haber 0, 1 o 2 triángulos']
     ],
     'Ecuaciones trigonométricas': [
       ['Identidad fundamental', 'sen²x + cos²x = 1'],
       ['Identidades con tangente', 'tan x = sen x / cos x · 1 + tan²x = sec²x'],
       ['Radianes', '180° = π rad. Grados → radianes: × π/180. Radianes → grados: × 180/π'],
-      ['Signos por cuadrante', 'I: todas positivas · II: solo sen · III: solo tan · IV: solo cos'],
-      ['Ángulo de referencia (θ)', 'Ángulo agudo con el eje x. Cuadrante II: 180° − θ · III: 180° + θ · IV: 360° − θ'],
+      ['Signos de las funciones trigonométricas por cuadrante', 'I: todas positivas · II: solo sin · III: solo tan · IV: solo cos'],
       ['Periodo', 'sen y cos: 2π (360°). tan: π (180°)'],
       ['Estrategia', 'Despeja la razón, halla el ángulo de referencia θ y ubica las soluciones según el signo'],
       ['sen x = k  (k > 0)', 'x = θ y x = 180° − θ  (cuadrantes I y II)'],
