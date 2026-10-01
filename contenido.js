@@ -86,7 +86,7 @@ const DATA = {
   // --- Recursos de Trabajo: [tipo, título, ID del PDF en Drive, modo de práctica opcional]
   // Modos: arit, lin, quad, pit, raz, gen, teq
   unidades: [
-    { Temáticas: 'Primer periodo: Fundamentos (Aritmética, álgebra, geometría)', items: [
+    { unidad: 'Primer periodo: Fundamentos (Aritmética, álgebra, geometría)', items: [
       ['Guía', 'Guía 1 – Operaciones, potencias y raíces', 'ID_DRIVE_GUIA_2'],
       ['Taller', 'Taller 1 – Aritmética', 'ID_DRIVE_TALLER_1', 'arit'],
       ['Guía', 'Guía 2 – Ecuaciones de primer grado', 'ID_DRIVE_GUIA_2'],
