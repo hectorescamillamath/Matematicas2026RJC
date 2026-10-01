@@ -111,7 +111,7 @@ const DATA = {
     { titulo: 'Teorema de Pitágoras', yt: 'Zl08roWOyIo' },
     { titulo: 'Solución de Triángulos usando Teorema de Pitágoras', yt: 'LDDzSm9rpV0' },
     { titulo: 'Razones Trigonométricas', yt: 'QiLtdiCRHHc' },
-    { titulo: 'Razones Trigonométricas de Ángulos Notables', yt: 'BrPx7drVTYY },
+    { titulo: 'Razones Trigonométricas de Ángulos Notables', yt: 'BrPx7drVTYY' },
     { titulo: 'Solución de triángulos rectángulos con Ángulos Notables', yt: 'auKgPc5UHdw' },
     { titulo: 'Solución de triángulos rectángulos usando calculadora', yt: '9PaRHH7GpkY' },
     { titulo: 'Funciones Trigonométricas inversas', yt: 'GSEcaCt7Z_U' },
