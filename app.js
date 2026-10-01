@@ -173,19 +173,8 @@ function openViewer(title, id) {
 $('#viewer-close').addEventListener('click', () => $('#viewer').close());
 $('#viewer').addEventListener('close', () => $('#viewer-frame').src = 'about:blank');
 
-function initRecursos() {
-  $('#unidades').innerHTML = DATA.unidades.map(u => `<div><h3 class="font-bold text-lg mb-2">${esc(u.unidad)}</h3><div class="grid sm:grid-cols-2 gap-4">
-    ${u.items.map(it => `<article class="card p-4"><p class="text-sm">${esc(it.tipo)}</p><h4 class="font-bold mb-3">${esc(it.titulo)}</h4>
-      <button class="btn" data-pdf="${esc(it.drive)}" data-title="${esc(it.titulo)}">Abrir aquí</button>
-      <a class="btn inline-block" href="${driveDownload(it.drive)}" target="_blank" rel="noopener">Descargar</a>${it.modo ? `<button class="btn btn-primary mt-2" data-play="${it.modo}">Practicar en línea</button>` : ''}</article>`).join('')}</div></div>`).join('');
-  $('#unidades').addEventListener('click', e => {
-    const b = e.target.closest('[data-pdf]'), p = e.target.closest('[data-play]');
-    if (b) openViewer(b.dataset.title, b.dataset.pdf);
-    if (p) { showTab('practica'); mathStart(p.dataset.play); }
-  });
-
   const play = i => {
-    $('#player').src = `https://www.youtube-nocookie.com/embed/${DATA.videos[i].yt}?rel=0`;
+    $('#player').src = `https://www.youtube.com/embed/${DATA.videos[i].yt}?rel=0`;
     $$('#playlist button').forEach((b, k) => b.classList.toggle('bg-mark', k === i));
   };
   $('#playlist').innerHTML = DATA.videos.map((v, i) => `<li><button class="w-full text-left p-2 rounded font-bold" data-v="${i}">${esc(v.titulo)}</button></li>`).join('');
