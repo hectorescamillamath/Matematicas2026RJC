@@ -123,7 +123,7 @@ const DATA = {
     { titulo: '¿El Teorema de Seno funciona siempre?', yt: 'l42y8QoBg10' },
     { titulo: '¿De dónde viene el Teorema de Coseno?', yt: 'rzJ8ro0ipg8' },
   ],
-  libro: 'ID_DRIVE_LIBRO',
+  libro: '18qJeVXECTi9NJO0Xao6EZQ6P6kk2MshT',
 
   // --- Tarjetas de estudio: tema → [anverso, reverso]
   tarjetas: {
