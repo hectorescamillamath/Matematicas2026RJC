@@ -103,6 +103,9 @@ function renderSession() {
     <div class="overflow-x-auto mt-4"><table class="w-full text-left"><thead><tr class="border-b-2 border-ink"><th class="py-2">Actividad</th><th>Calificación</th></tr></thead><tbody>
     ${session.notas.map(n => `<tr class="border-b"><td class="py-2">${esc(n.actividad)}</td><td class="font-bold">${n.valor === '' ? '<span class="font-normal text-gray-600">Sin publicar</span>' : esc(n.valor)}</td></tr>`).join('') || '<tr><td colspan="2" class="py-3">Aún no hay actividades registradas.</td></tr>'}
     </tbody></table></div>
+    
+    <p class="mt-4 text-lg">¿CÓMO CALCULAR MIS NOTAS?</p>
+    <p class="mt-4 text-base">"NOTA TALLERES"0,15 + "NOTA EXAMEN PARCIAL"*0,3 + "APUNTES, TAREAS, CONSULTAS"*0,15 + "AUTOEVALUACIÓN"*0,05 + "COEVALUACIÓN"*0,05</p>
     <p class="mt-4 text-sm">Al ponderar las notas mostradas obtenderás una nota menor a la mostrada como "Definitiva" (Cuadro amarillo, esquina superior derecha de la pantalla).</p>
     <p class="mt-4 text-sm">Esto se debe a que no fue aplicado el segundo examen parcial. Para corregir esta situación, al resultado que obtienes al ponderar deberás dividirlo entre 0,7; de esta manera, el 70% de actividades se corresponde con el 100% de la calificación.</p>
     <p class="mt-4 text-sm">Esta corrección de cálculo, en cualquier caso, sube el valor de la nota ponderada, por lo que no representa un perjuicio para ningún estudiante.</p>
